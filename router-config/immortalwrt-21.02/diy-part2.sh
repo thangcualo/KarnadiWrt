@@ -171,6 +171,10 @@ svn co https://github.com/gSpotx2f/luci-app-internet-detector/trunk/internet-det
 
 # git clone https://github.com/tmn505/openwrt-dvb package/openwrt-dvb
 
+# iStore
+svn co https://github.com/linkease/istore-ui/trunk/app-store-ui package/app-store-ui
+svn co https://github.com/linkease/istore/trunk/luci package/istore
+
 #================================
 ## MISC
 #================================
