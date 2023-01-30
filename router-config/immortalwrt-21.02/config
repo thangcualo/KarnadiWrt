@@ -944,5 +944,8 @@ CONFIG_PACKAGE_webui-aria2=y
 CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_ariang=y
 
+# app store
+CONFIG_PACKAGE_luci-app-store=y
+
 # tv headend untuk tv digital
 # CONFIG_PACKAGE_tvheadend is not set
