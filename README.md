@@ -1,5 +1,5 @@
 #  KarnadiWrt-21.02 for Amlogic
-KarnadiWrt yaitu gabungan antara *firmware* [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) yang mempunyai dukungan tambahan *package* yang banyak dan *firmware* [ROOter](https://github.com/ofmodemsandmen/ROOterSource2102) yang sangat cocok untuk modem rakitan seperti Fibocom l860-gl dan l850-gl. *Firmware* ini dikhususkan untuk perangkat Amlogic terutama **X96 Max Plus 2**.
+KarnadiWrt yaitu gabungan antara *firmware* [ImmortalWrt](https://github.com/immortalwrt/immortalwrt) yang mempunyai dukungan tambahan *package* yang banyak dan *firmware* [ROOter](https://github.com/ofmodemsandmen/ROOterSource2102) yang sangat cocok untuk modem rakitan seperti Fibocom l860-gl dan l850-gl. *Firmware* ini dikhususkan untuk perangkat Amlogic terutama **X96 Max Plus 2 (s905x3)**.
 
 ## Informasi Firmware:
 1. Ip bawaan: `11.11.1.1`
