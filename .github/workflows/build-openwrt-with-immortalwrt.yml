@@ -11,66 +11,21 @@ on:
   workflow_dispatch:
     inputs:
       openwrt_board:
-        description: "Select Amlogic board"
+        description: "Select router"
         required: false
         default: "all"
         type: choice
         options:
           - all
-          - s905x3_s905d_s912
-          - a311d
-          - s922x
-          - s922x-n2
-          - s922x-reva
-          - s905x3
-          - s905x3-b
-          - s905x2
-          - s905x2-km3
-          - s912
-          - s912-m8s
-          - s905d
-          - s905d-ki
-          - s905x
-          - s905w
-          - s905
-          - s905l3a
-          - s905l2
-      openwrt_kernel:
-        description: "Select kernel version"
-        required: false
-        default: "5.15.85_6.1.1"
-        type: choice
-        options:
-          - 5.4.225_5.10.160_5.15.85
-          - 5.4.225_5.10.160
-          - 5.10.160_5.15.85
-          - 5.15.85_6.1.1
-          - 5.4.225
-          - 5.10.160
-          - 5.15.85
-          - 6.1.1
-      auto_kernel:
-        description: "Auto use the latest kernel"
-        required: false
-        default: true
-        type: boolean
-      kernel_repo:
-        description: "Set the kernel repository"
-        required: false
-        default: "https://github.com/ophub/kernel/tree/main/pub"
-      openwrt_size:
-        description: "Set the rootfs size(Unit: MiB)"
-        required: false
-        default: "1024"
-
+          - R619AC-128M
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-21.02
+  REPO_URL: https://github.com/thangcualo/immortalwrt
+  REPO_BRANCH: 21.02.02
   FEEDS_CONF: router-config/immortalwrt-21.02/feeds.conf.default
   CONFIG_FILE: router-config/immortalwrt-21.02/config
   DIY_P1_SH: router-config/immortalwrt-21.02/diy-part1.sh
   DIY_P2_SH: router-config/immortalwrt-21.02/diy-part2.sh
-  TZ: America/New_York
+  TZ: Asia/Shanghai
 
 jobs:
   build:
