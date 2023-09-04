@@ -119,32 +119,3 @@ jobs:
           rm -rf $(ls . | grep -v "^bin$" | xargs) 2>/dev/null
           df -hT ${PWD}
 
-      - name: Build OpenWrt firmware
-        if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
-        uses: ophub/amlogic-s9xxx-openwrt@main
-        with:
-          openwrt_path: openwrt/bin/targets/*/*/*rootfs.tar.gz
-          openwrt_board: ${{ inputs.openwrt_board }}
-          openwrt_kernel: ${{ inputs.openwrt_kernel }}
-          auto_kernel: ${{ inputs.auto_kernel }}
-          kernel_repo: ${{ inputs.kernel_repo }}
-          openwrt_size: ${{ inputs.openwrt_size }}
-          gh_token: ${{ secrets.GH_TOKEN }}
-
-      - name: Upload the packaged firmware to Release
-        uses: ncipollo/release-action@main
-        if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
-        with:
-          tag: ${{ steps.compile.outputs.build_tag }}
-          artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
-          allowUpdates: true
-          token: ${{ secrets.GH_TOKEN }}
-          body: |
-            This is KarnadiWrt, custom openwrt firmware based on ImmortalWrt and ROOter for Amlogic s9xxx tv box
-            * Firmware information
-            Default IP: 11.11.1.1 (esier to type IP)
-            Default username: root
-            Default password: password
-            Default WIFI name: KarnadiWrt
-            Default WIFI password: none
-            Install to EMMC: Login to OpenWrt → System → Amlogic Service → Install OpenWrt
